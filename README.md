@@ -32,7 +32,7 @@ RxJS = librairie de reactive programming. Sert à manipuler un flux (= Observabl
 ### Elements atomiques
 Un observable est composé de 3 type d'éléments
 
-#### Une ou plusieur valeur
+#### Une ou plusieurs valeur
 ![Valeur](assets/images/observable-value.png)
 
 #### Une erreur
@@ -41,7 +41,7 @@ Un observable est composé de 3 type d'éléments
 #### Une fin (completion)
 ![Completion](assets/images/observable-completion.png)
 
-### Examples
+### Exemples
 Voici 2 examples d'Observable:
 * Un Observable qui envoie 4 valeurs et qui finit
 ![Example 1](assets/images/observable-example-1.gif)
@@ -87,7 +87,7 @@ Créer un observable permet de gérer ce qui sera émit par celui-ci: la ou les 
 
 ### Manuellement
 Il est possible de créer un observable "manuellement" en utilisant le constructeur de Observable. 
-Il est rare d'utiliser ce pattern car beaucoup d'autres méthode pour générer des observables. 
+Il est rare d'utiliser ce pattern car beaucoup d'autres méthodes existent pour générer des observables. 
 
 ```typescript
 new Observable(observer => {
