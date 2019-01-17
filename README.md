@@ -51,11 +51,9 @@ Voici 2 examples d'Observable:
 
 * Un Observable défini en TypeScript qui envoie 3 valeurs et qui finit
 ```typescript
-const myTimer$ = interval(1000).pipe(
-    take(3)
-);
+const myTimer$ = interval(1000).pipe(take(3));
 ```
-Sa représentation graphique est la suivante
+Ce qui a comme représenation
 ![Example 3](assets/images/observable-example-3.gif)
 
 ## Les Subscriptions: comment écouter un Observable? 
@@ -67,10 +65,10 @@ source.subscribe(
    value => console.log(value),
    err => console.log('error'),
    () => console.log('completed')
-)
+);
 ```
 
-Par exemple, avec cet observable comme source 
+Par exemple, avec cet Observable comme source 
 
 ![Example 4](assets/images/observable-example-4.gif)
 
@@ -83,7 +81,8 @@ Le résultat serait le suivant en console:
 
 ## Dieu créa l'Observable
 
-Créer un observable permet de gérer ce qui sera émit par celui-ci: la ou les valeurs (ou aucune), l'erreur ou la completion
+Créer un observable permet de gérer ce qui sera émit par celui-ci: la ou les valeurs (ou aucune), l'erreur ou la completion.
+Il est tout a fait possible pour un observable de ne jamais finir ou d'avoir d'erreur
 
 ### Manuellement
 Il est possible de créer un observable "manuellement" en utilisant le constructeur de Observable. 
@@ -110,3 +109,14 @@ En réutilisant l'appel à `subscribe` d'au dessus, on obtiendrait :
 // completed
 ```
 
+### Générateurs
+Pour éviter de créer manuellement un observable, plusieurs méthodes existent dans RxJS. En voici quelques examples:
+
+| Code              | Description                                  | Representation                                           |
+|-------------------|----------------------------------------------|----------------------------------------------------------|
+| `NEVER`           | Observable that "never emit value             | ![NEVER](assets/images/observable-never.png)             |
+| `EMPTY`           | Observable that complete imediatly           | ![EMPTY](assets/images/observable-empty.png)             |
+| `of('A')`         | Observable that emit a value, then complete  | ![of()](assets/images/observable-of.png)                 |
+| `intervall(1000)` | Observable that emit a value every x seconds | ![interval()](assets/images/observable-interval.png)     |
+| `throwError({})`  | Observable that throw an error               | ![throwError()](assets/images/observable-throwError.png) |
+See also http://rxmarbles.com/ for more examples.
